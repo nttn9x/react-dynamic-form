@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+html,
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+body *,
+html * {
+  user-select: none;
+}
+
+.layer {
+  @apply z-0;
+  @apply flex;
+  @apply flex-col;
+}
+
+.mask {
+  --size: 0px;
+  --x: -100px;
+  --y: -100px;
+
+  mask-size: var(--size), contain;
+  mask-image: url(./assets/svg/circle.svg);
+  mask-repeat: no-repeat;
+  mask-position: calc(var(--x) - var(--size)/2) calc(var(--y) - var(--size)/2), center;
+  mask-origin: content-box;
+  @apply bg-primary;
+  @apply absolute;
+  @apply z-10;
+  @apply top-0;
+  @apply left-0;
+  @apply right-0;
+  @apply flex;
+  @apply flex-col;
+  @apply pointer-events-none;
+}
