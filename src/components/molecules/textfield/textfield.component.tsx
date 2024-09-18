@@ -8,6 +8,7 @@ const styles = {
 interface ITextField {
   label?: string;
   errorMessage?: string;
+  name?: string;
 }
 
 export const TextField = React.forwardRef<HTMLInputElement, ITextField>(
@@ -19,7 +20,7 @@ export const TextField = React.forwardRef<HTMLInputElement, ITextField>(
           <Input className="w-full" ref={ref} {...props} />
         </div>
         {errorMessage && (
-          <Typography variant="body-xs" color="critical">
+          <Typography data-testid={`${props.name}-error`} variant="body-xs" color="critical">
             {errorMessage}
           </Typography>
         )}
