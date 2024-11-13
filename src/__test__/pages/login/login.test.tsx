@@ -10,7 +10,6 @@ describe("Login Page", () => {
 
   test("does not submit the form", async () => {
     render(<Login />);
-
     const submitBtn = await screen.getByTestId("submitBtn");
 
     await userEvent.click(submitBtn);
